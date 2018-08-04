@@ -20,9 +20,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use((req, res, next) => {
-    res.render('maintenance.hbs');
-});
+// app.use((req, res, next) => {
+//     res.render('maintenance.hbs');
+// });
 
 app.use(express.static(__dirname + "/public"));//Express middleware function
 
@@ -44,6 +44,13 @@ app.get('/about', (req, res) => {
     res.render('about.hbs', {
         headerMsg : 'Node Web Server',
         pageTitle : 'About Page'
+    });
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+    headerMsg : 'Node Web Server',
+    pageTitle : 'Projects Page'
     });
 });
 
